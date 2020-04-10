@@ -61,16 +61,13 @@ class BST(BinaryTree):
         The lecture videos have the exact code you need,
         except that their method is an instance method when it should have been a static method.
         '''
+        left_valid = True
+        right_valid = True
+
         if node.left:
-            if value > node.left.value:
-                return BST._is_bst_satisfied(node.left, node.left.value)
-            else:
-                return False
+            left_valid = node.value > node.left.value and BST._is_bst_satisfied(node.left)
         if node.right:
-            if value < node.right.value:
-                return BST._is_bst_satisfied(node.right, node.right.value)
-            else:
-                return False
+            right_valid = node.value < node.right.value and BST._is_bst_satisfied(node.right)
 
 
     def insert(self, value):
