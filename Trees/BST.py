@@ -209,6 +209,26 @@ class BST(BinaryTree):
         Use a recursive helper function.
         '''
         self.root = BST._remove(self.root,value)
+            
+    @staticmethod
+    def _remove(node, value):
+        if not node:
+            return node
+        if node.value > value:
+            node.left = BST._remove(node.left, value)
+        elif node.value < value:
+            node.right = BST._remove(node.right, value)
+        else:
+            if not node.right:
+                return node.left
+            if not node.left:
+                return node.right
+            temp_val = node.right
+            while temp_val.left:
+                temp_val = temp_val.left
+            node.value = temp_val.value
+            node.right = BST._remove(node.right, node.value)
+        return node
 
 
     def remove_list(self, xs):
