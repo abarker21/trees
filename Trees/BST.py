@@ -68,6 +68,8 @@ class BST(BinaryTree):
             left_valid = node.value > node.left.value and BST._is_bst_satisfied(node.left)
         if node.right:
             right_valid = node.value < node.right.value and BST._is_bst_satisfied(node.right)
+            
+        return left_valid and right_valid
 
 
     def insert(self, value):
