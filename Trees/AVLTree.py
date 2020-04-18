@@ -69,7 +69,7 @@ class AVLTree(BST):
         The textbook's class hierarchy for their AVL tree code is fairly different from our class hierarchy,
         however, so you will have to adapt their code.
         '''
-        new_node. = Node(node.right.value)
+        new_node = Node(node.right.value)
         new_node.right = node.right.right
 
         new_left = Node(node.value)
