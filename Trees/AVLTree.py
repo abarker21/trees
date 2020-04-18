@@ -99,7 +99,7 @@ class AVLTree(BST):
         new_right.right = node.right
         new_right.left = node.left.right
 
-        new_node.right = new_left
+        new_node.right = new_right
 
         return new_node
 
