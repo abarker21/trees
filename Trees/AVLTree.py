@@ -19,10 +19,9 @@ class AVLTree(BST):
         FIXME:
         Implement this function.
         '''
-        if self.root is None:
-            self.root = Node(value)
-        else:
-            self.root = AVLTree._insert(value, self.root)
+        self.root = None
+        if xs:
+            self.insert_list(xs)
 
 
     def balance_factor(self):
